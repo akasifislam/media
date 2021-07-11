@@ -19,7 +19,12 @@
       <div class="mt-4">
           <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
                 @foreach ($photos as $photo)
-                    <img src="{{ $photo->getUrl('thumb') }}" alt="sdbkfgsdbg">
+                    <div>
+                        <a class="block relative h-56 rounded overflow-hidden">
+                            <img class="object-cover object-center w-full h-full block" src="{{ $photo->getUrl('thumb') }}" alt="sdbkfgsdbg">
+                        </a>
+                        <a href="{{ route('album.image.show',[$album->id,$photo->id]) }}">Full Image</a>
+                    </div>
                 @endforeach
           </div>
       </div>

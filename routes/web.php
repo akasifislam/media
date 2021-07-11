@@ -28,3 +28,4 @@ require __DIR__ . '/auth.php';
 
 Route::resource('/albums', AlbumController::class)->middleware('auth');
 Route::post('/albums/{album}/upload', [AlbumController::class, 'upload'])->name('albums.upload');
+Route::get('/albumsaaa/{album}/imageaaaaaa/{image}', [AlbumController::class, 'showImage'])->name('album.image.show');

@@ -101,4 +101,11 @@ class AlbumController extends Controller
         }
         return redirect()->route('albums.index');
     }
+
+    public function showImage(Album $album, $id)
+    {
+        $media = $album->getMedia();
+        $image = $media->where('id', $id)->first();
+        return view('album.image-show', compact('album', 'image'));
+    }
 }
