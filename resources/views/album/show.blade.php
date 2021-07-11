@@ -15,6 +15,13 @@
             <x-button class="bg-green-500">save</x-button>
           </div>
         </form>
-      </div>      
+      </div>
+      <div class="mt-4">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+                @foreach ($photos as $photo)
+                    <img src="{{ $photo->getUrl('thumb') }}" alt="sdbkfgsdbg">
+                @endforeach
+          </div>
+      </div>
    </div>
 </x-app-layout>

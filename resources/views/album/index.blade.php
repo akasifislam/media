@@ -21,7 +21,7 @@
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap"> {{ $key+1 }} </td>
                         <td class="px-6 py-4 whitespace-nowrap"> 
-                            <a href="{{ route('albums.show',$album->id) }}" class="hover:text-green-700" target="_blank">
+                            <a href="{{ route('albums.show',$album->id) }}" class="hover:text-green-700">
                                 {{ $album->title }}
                             </a>    
                         </td>                      
