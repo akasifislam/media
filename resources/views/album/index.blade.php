@@ -20,8 +20,22 @@
                     @foreach ($albums as $key => $album)
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap"> {{ $key+1 }} </td>
-                        <td class="px-6 py-4 whitespace-nowrap"> {{ $album->title }} </td>                      
-                        <td class="px-6 py-4 text-right text-sm">Manage</td>
+                        <td class="px-6 py-4 whitespace-nowrap"> 
+                            <a href="{{ route('albums.show',$album->id) }}" class="hover:text-green-700" target="_blank">
+                                {{ $album->title }}
+                            </a>    
+                        </td>                      
+                        <td class="px-6 py-4 text-right text-sm">
+                            <div class="flex justify-center">
+                                <a href="{{ route('albums.edit',$album->id) }}" class="bg-green-500 hover:bg-green-700 p-2 py-2 px-4 rounded-md cursor-pointer mr-2">Edit</a>
+                                <form action="{{ route('albums.destroy',$album->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-button class="bg-red-500 hover:bg-red-600 p-2 rounded-md cursor-pointer">Delete</x-button>
+                                </form>
+                            </div>
+                        </td>
+                        </td>
                     </tr>
                     @endforeach
                   </tbody>
